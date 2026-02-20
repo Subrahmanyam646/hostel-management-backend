@@ -1,0 +1,34 @@
+{
+  "info": {
+    "name": "Hostel Management Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "{{baseUrl}}/api/v1/auth/register", "host": ["{{baseUrl}}"], "path": ["api","v1","auth","register"]},
+        "body": {"mode": "raw", "raw": "{\n  \"fullName\": \"Warden User\",\n  \"email\": \"warden@hostel.local\",\n  \"password\": \"Warden@123\",\n  \"role\": \"WARDEN\"\n}"}
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api","v1","auth","login"]},
+        "body": {"mode": "raw", "raw": "{\n  \"email\": \"admin@hostel.local\",\n  \"password\": \"Admin@123\"\n}"}
+      }
+    },
+    {
+      "name": "Search Rooms",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "{{baseUrl}}/api/v1/hostel/rooms/search?minCapacity=2", "host": ["{{baseUrl}}"], "path": ["api","v1","hostel","rooms","search"], "query": [{"key":"minCapacity","value":"2"}]}
+      }
+    }
+  ],
+  "variable": [{"key": "baseUrl", "value": "http://localhost:8080"}]
+}

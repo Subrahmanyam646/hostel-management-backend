@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hostel-management-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/hostel_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+
+server:
+  port: 8080
+
+security:
+  jwt:
+    secret: VGhpc0lzQVN1cGVyU2VjcmV0S2V5VGhhdElzQXRMZWFzdDMyQnl0ZXNMb25nIQ==
+    expiration-seconds: 86400
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
